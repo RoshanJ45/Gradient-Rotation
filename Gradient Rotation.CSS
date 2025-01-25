@@ -1,0 +1,27 @@
+        body {
+display: grid;
+place-items: center;
+background: #0a0a0a;
+height: 100vh;
+margin: 0;
+}
+div {
+width: max(25vmin, 8rem);
+aspect-ratio: 1;
+border-radius: 1rem;
+}
+@property --gradient-angle {
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+@keyframes rotate-gradient {
+to {
+--gradient-angle: 360deg;
+}
+}
+.rotate-gradient {
+background: conic-gradient(from var(--gradient-angle), transparent, white);
+animation: rotate-gradient 3s linear infinite;
+}
+   
